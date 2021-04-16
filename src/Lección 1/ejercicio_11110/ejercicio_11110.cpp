@@ -103,28 +103,23 @@ int main() {
                 {
                     if (mm == 2)
                     {
-                        if ((dd == 29) && ((aa % 4 == 0) || (aa % 400 == 0)) && (aa % 100 != 0))
+                        if (dd == 29)
                         {
-                            fecha2 = aa * 10000;
-                            fecha2 = fecha2 + mm * 100;
-                            fecha2 = fecha2 + dd;
-                        }
-                        else
-                        {
-                            if ((dd == 29) && ((aa % 400) == 0) && ((aa % 100) == 0))
+                            // Test
+                            if (((aa % 4 == 0 || aa % 400 == 0) && aa % 100 != 0) || ((aa % 400 == 0) && (aa % 100 == 0)))
                             {
                                 fecha2 = aa * 10000;
                                 fecha2 = fecha2 + mm * 100;
                                 fecha2 = fecha2 + dd;
                             }
-                            else
+                        }
+                        else
+                        {
+                            if (dd == 28)
                             {
-                                if (dd == 28)
-                                {
-                                    fecha2 = aa * 10000;
-                                    fecha2 = fecha2 + mm * 100;
-                                    fecha2 = fecha2 + dd;
-                                }
+                                fecha2 = aa * 10000;
+                                fecha2 = fecha2 + mm * 100;
+                                fecha2 = fecha2 + dd;
                             }
                         }
                     }
