@@ -1,46 +1,31 @@
 #include <iostream>
 using namespace std;
 
-struct Hora
+double factorial (double n)
 {
-    int mn;
-    int sg;
-};
+    double cont = 1, f = 1;
 
-bool horaValidarHora (Hora h)
-{
-    if (h.mn >= 0 && h.mn < 60 && h.sg >= 0 && h.sg < 60)
+    while (cont <= n)
     {
-        return true;
+        f = f * cont;
+        cont++;
     }
-    return false;
-}
-
-void horaMostrarDatos (Hora h)
-{
-    cout << h.mn << " min" << endl;
-    cout << h.sg << " seg" << endl;
-}
-
-void horaIngresoDeDatos (Hora &h)
-{
-    cout << "Ingrese minutos: ";
-    cin >> h.mn;
-    cout << "Ingrese segundos: ";
-    cin >> h.sg;
+    return f;
 }
 
 int main()
 {
-    Hora h;
+    // NOTA: El factorial de un número n (se indica n!) se calcula así: n * n-1 * n-2 * … * 3 *
+    // 2 * 1. El factorial de 0 es 1. Por ejemplo: 5! es: 120, 4! es: 24.
 
-    horaIngresoDeDatos(h);
-    if (horaValidarHora(h))
+    double num = 1;
+    
+    while (num > 0)
     {
-        horaMostrarDatos(h);
+        cout << "Ingrese un numero: ";
+        cin >> num;
+        cout << "El factorial de " << num << " es " << factorial(num) << endl;       
     }
-    else
-    {
-        cout << "ERROR, datos mal ingresados" << endl;
-    }
+
+    return 0;
 }
