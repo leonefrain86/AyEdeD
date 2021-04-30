@@ -3,24 +3,31 @@ using namespace std;
 
 bool esAnioBisiesto (int aa)
 {
-    return (aa % 100 == 0 && aa % 400 == 0) || ((aa % 4 == 0 || aa % 400) && aa % 100 != 0);
+    return (aa % 100 == 0 && aa % 400 == 0) || ((aa % 4 == 0 || aa % 400 == 0) && aa % 100 != 0);
 }
 
 bool validarFecha (int aa, int mm, int dd)
 { 
     if (mm > 0 && mm <= 12 && dd > 0 && dd <= 31 && aa > 0)
     {
-        if (mm == 2 && dd <= 29)
+        if (mm == 2)
         {
-            if (!esAnioBisiesto(aa))
+            if (dd <= 29)
             {
-                if (dd > 28)
+                if (!esAnioBisiesto(aa))
                 {
-                    return false;
-                }
+                    if (dd > 28)
+                    {
+                        return false;
+                    }
+                } 
+            }
+            else
+            {
+                return false;
             }  
         }
-        
+
         if (mm == 4 || mm == 6 || mm == 9 || mm == 11)
         {
             if (dd > 30)

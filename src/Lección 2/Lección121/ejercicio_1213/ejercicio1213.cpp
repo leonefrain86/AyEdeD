@@ -3,7 +3,7 @@ using namespace std;
 
 bool esAnioBisiesto (int aa)
 {
-    return (aa % 100 == 0 && aa % 400 == 0) || ((aa % 4 == 0 || aa % 400) && aa % 100 != 0);
+    return (aa % 100 == 0 && aa % 400 == 0) || ((aa % 4 == 0 || aa % 400 == 0) && aa % 100 != 0);
 }
 
 int diasDelMes (int mm, int aa)
